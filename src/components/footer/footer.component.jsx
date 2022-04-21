@@ -139,7 +139,7 @@ const Footer = () => {
                                             <NavLinK
                                                 to="/"
                                                 style={({isActive}) =>
-                                                    isActive ? activeStyle : undefined
+                                                    isActive ? activeStyle : UnActiveStyle
                                                 }
                                             >
 

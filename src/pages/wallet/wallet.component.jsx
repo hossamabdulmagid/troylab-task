@@ -1,7 +1,7 @@
 const WalletComponent = () => {
     return (
         <div>
-            welcome From Wallet Component
+            welcome From Wallet
         </div>
     )
 }
