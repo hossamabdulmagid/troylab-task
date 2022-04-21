@@ -16,9 +16,10 @@ export const RapperHomePage = styled.div`
     margin: 0 auto;
   }
 
-  span{
-    padding:2px;
+  span {
+    padding: 2px;
   }
+
   .btn-light {
     border-radius: 10px;
   }
@@ -37,14 +38,21 @@ export const RapperHomePage = styled.div`
   .card-img {
     margin: 0 auto;
     text-align: center;
-    padding:5px;
-    .img{
-      width:150px;
+    padding: 5px;
+
+    .img {
+      width: 150px;
       height: 150px;
-      margin:10px; 
+      margin: 10px;
     }
   }
 
+  .card {
+    margin: 5px;
+    padding: 5px;
+    borderRadius: 10px;
+    text-align: center;
+  }
 
 `;
 

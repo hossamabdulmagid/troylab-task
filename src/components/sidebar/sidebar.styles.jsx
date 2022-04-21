@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import {FcContacts, FcSearch} from "react-icons/fc";
 import {MdDeliveryDining} from "react-icons/md";
+import {AiFillCloseCircle} from "react-icons/ai";
 
 
 export const RapperSidebarComponent = styled.div`
@@ -54,9 +55,70 @@ export const RapperSidebarComponent = styled.div`
     text-align: center;
   }
 
+  .search-result {
+    margin-top: 20px;
+    margin-bottom: 100px;
+  }
 
+  .card-header {
+    background-color: #206861;
+  }
+
+  .profile-pic {
+    display: inline;
+
+    img {
+      float: right;
+      width: 70px;
+      height: 60px;
+      border-radius: 30px;
+    }
+  }
+
+  .card-body {
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .card-body-head {
+    background-color: #E5F5F4;
+  }
+
+  .box {
+    padding: 2px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+
+  .box-content {
+    display: inline;
+  }
+
+  .product-img {
+    float: right;
+    height: 50px;
+  }
+
+  .d-block {
+    float: right;
+  }
+
+  .price {
+    display: inline-flex;
+    float: left;
+  }
 `;
 
 export const ContactIcon = styled(FcContacts)``;
 export const SearchIcon = styled(FcSearch)``;
 export const DeliverIcon = styled(MdDeliveryDining)``;
+export const CloseIcon = styled(AiFillCloseCircle)`
+  margin: 6px;
+`;
+export const CloseIconRed = styled(AiFillCloseCircle)`
+  margin: 6px;
+  color: #FF9797;
+`;
+
+
