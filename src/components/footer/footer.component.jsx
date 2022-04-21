@@ -115,7 +115,7 @@ const Footer = () => {
 
                                         <li className={'mob'}>
                                             <NavLink
-                                                to="/shoppnig"
+                                                to="/shopping"
                                                 style={({isActive}) =>
                                                     isActive ? activeStyle : UnActiveStyle
                                                 }

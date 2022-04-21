@@ -39,23 +39,23 @@ const Sidebar = () => {
             <Col bsPrefix="d-block d-md-none d-lg-none d-xl-none center-item">
                 <RapperSidebarComponent>
                     <div className="sidenav-mob">
-                        <div className={'container'}>
+                        <div className={'container-fluid'}>
                             <Row>
-                                <Col xs={2} md={2} lg={2}>
+                                <Col xs={6} md={6} lg={2}>
                                     <h2>
                                         <ContactIcon/>
                                     </h2>
                                 </Col>
-                                <Col xs={2} md={2} lg={2}>
+                                <Col xs={6} md={6} lg={2}>
                                     <h2>
                                         <SearchIcon/>
                                     </h2>
                                 </Col>
-                                <Col xs={8} md={8} lg={8}>
+                                <Col xs={12} md={12} >
                                     <Form.Control type="search" className={'input-search'} placeholder={`اسم الطالب`}/>
                                 </Col>
                             </Row>
-                            <Col className={'delivery-section text-center'}>
+                            <Col className={'row delivery-section-mob text-center'}>
                                 <h1>
                                     <DeliverIcon/>
                                 </h1>

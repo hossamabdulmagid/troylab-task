@@ -9,7 +9,13 @@ const HomePage = () => {
                 {[1, 2, 3, 4, 5, 6, 7, 8].map(idx => {
                     return (
                         <div className={"col-sm-3"} key={idx}>
-                            <Card style={{width: '18rem', margin: '5px', padding: '5px', borderRadius: '10px'}}>
+                            <Card style={{
+                                width: '18rem',
+                                margin: '5px',
+                                padding: '5px',
+                                borderRadius: '10px',
+                                textAlign: 'center'
+                            }}>
                                 <Card.Body>
                                     <Card.Title className={'btn btn-light kcal'}>
                                         <RunIcon/> {" "}

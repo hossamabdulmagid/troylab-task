@@ -19,6 +19,7 @@ export const RapperSidebarComponent = styled.div`
     padding-top: 10px;
     position: fixed;
   }
+
   .sidenav-mob {
     height: 90%;
     width: 300px;
@@ -28,7 +29,10 @@ export const RapperSidebarComponent = styled.div`
     background-color: rgb(22, 167, 155);
     overflow-x: hidden;
     padding-top: 10px;
+    margin: 0 auto;
+
   }
+
   .input-search {
     margin-top: 2px;
   }
@@ -42,6 +46,12 @@ export const RapperSidebarComponent = styled.div`
   .delivery-section {
     margin-top: 170px;
     font-size: 22px;
+  }
+
+  .delivery-section-mob {
+    margin-top: 170px;
+    font-size: 22px;
+    text-align: center;
   }
 
 

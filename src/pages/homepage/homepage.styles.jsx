@@ -5,6 +5,17 @@ import {AiFillPlusCircle, AiOutlineExclamationCircle} from "react-icons/ai";
 import {GiRun} from "react-icons/gi";
 
 export const RapperHomePage = styled.div`
+  .header {
+    background-color: rgb(233, 235, 239);
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: black;
+    margin: 0 auto;
+  }
+
   span{
     padding:2px;
   }
