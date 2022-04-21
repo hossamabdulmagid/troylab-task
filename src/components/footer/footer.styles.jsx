@@ -19,8 +19,13 @@ export const RapperFooterComponent = styled.div`
 
   ul {
     display: flex;
+
+  }
+
+  li {
     list-style: none;
     justify-content: space-between;
+    cursor: pointer;
   }
 
   .web {

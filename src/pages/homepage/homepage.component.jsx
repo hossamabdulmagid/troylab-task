@@ -6,36 +6,33 @@ const HomePage = () => {
     return (
         <RapperHomePage className={"container"}>
             <div className={"row"}>
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((singleProduct, idx) => {
+                {[1, 2, 3, 4, 5, 6, 7, 8].map(idx => {
                     return (
-
-                        <div className={"col-sm-3"}>
+                        <div className={"col-sm-3"} key={idx}>
                             <Card style={{width: '18rem', margin: '5px', padding: '5px', borderRadius: '10px'}}>
                                 <Card.Body>
-                                    <Card.Title>
-                                        <button className={'btn btn-light'} size={'xs'}>
-                                                    <span className={'kcal'}>
-                                                    <RunIcon/> {" "}
-                                                        200 Kcal
-                                                    </span>
-                                        </button>
-                                        <ExclamationIcon/>
+                                    <Card.Title className={'btn btn-light kcal'}>
+                                        <RunIcon/> {" "}
+                                        200 Kcal
                                     </Card.Title>
+                                    <ExclamationIcon/>
+
                                     <div className={'card-img'}>
-                                        <img src={'https://cdn.salla.sa/BDYO6CMcN2T5BqxOoOGvUWHSqcHQBd5Rz5jk4SwV.jpg'}
-                                             alt={'https://cdn.salla.sa/BDYO6CMcN2T5BqxOoOGvUWHSqcHQBd5Rz5jk4SwV.jpg'}
-                                             className={'img'}
+                                        <img
+                                            src={'https://spinneys-egypt.com/index.php/cache/large/product/6435/EXkDm4hb0oEUH3ZDVuJU6hUZ74Kzx7CCrWSaaHbw.jpg'}
+                                            alt={'image-still-loading'}
+                                            className={'img'}
                                         />
                                     </div>
                                     <Card.Text>
                                         <span>عصير تفاح 250 مل</span>
-                                        <p>
+                                        <div>
                                             الكمية بالمخزون
                                             {": "}
                                             <span className={'text'}>
-                                              5
+                                               {5}
                                          </span>
-                                        </p>
+                                        </div>
                                     </Card.Text>
                                     <div className={'footer'}>
                                         <PlusIcon/>

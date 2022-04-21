@@ -8,10 +8,20 @@ export const RapperSidebarComponent = styled.div`
   background-color: #16A79B;
   color: silver;
 
-  .sidenav {
-    height: 100%;
+  .sidenav-web {
+    height: 90%;
     width: 300px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(22, 167, 155);
+    overflow-x: hidden;
+    padding-top: 10px;
     position: fixed;
+  }
+  .sidenav-mob {
+    height: 90%;
+    width: 300px;
     z-index: 1;
     top: 0;
     left: 0;
@@ -19,7 +29,6 @@ export const RapperSidebarComponent = styled.div`
     overflow-x: hidden;
     padding-top: 10px;
   }
-
   .input-search {
     margin-top: 2px;
   }

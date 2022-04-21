@@ -9,7 +9,7 @@ export const RapperHomePage = styled.div`
     padding:2px;
   }
   .btn-light {
-    border-radius: 15px;
+    border-radius: 10px;
   }
 
   .kcal {
@@ -28,8 +28,9 @@ export const RapperHomePage = styled.div`
     text-align: center;
     padding:5px;
     .img{
-      width:100px;
-      height: 100px;
+      width:150px;
+      height: 150px;
+      margin:10px; 
     }
   }
 
@@ -40,7 +41,7 @@ export const RapperHomePage = styled.div`
 export const ExclamationIcon = styled(AiOutlineExclamationCircle)`
   float: right;
   color: #16A79B;
-  margin: 8px;
+  margin: 1px;
 `;
 
 

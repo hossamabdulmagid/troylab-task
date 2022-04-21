@@ -12,7 +12,6 @@ const Footer = () => {
         color: 'dimgray'
     };
 
-    let activeClassName = "underline";
     return (
         <RapperFooterComponent>
             <nav>

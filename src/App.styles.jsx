@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const RapperAppComponent = styled.div`
   .App-header {
     background-color: rgb(233, 235, 239);
-    height: 119vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
