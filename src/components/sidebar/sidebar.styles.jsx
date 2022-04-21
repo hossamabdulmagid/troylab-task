@@ -6,10 +6,10 @@ import {MdDeliveryDining} from "react-icons/md";
 
 export const RapperSidebarComponent = styled.div`
   background-color: #16A79B;
-  color: antiquewhite;
+  color: silver;
 
   .sidenav {
-    height: 100%;
+    height: 92%;
     width: 300px;
     position: fixed;
     z-index: 1;
@@ -17,23 +17,25 @@ export const RapperSidebarComponent = styled.div`
     left: 0;
     background-color: rgb(22, 167, 155);
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 10px;
   }
 
-.input-search{
-  margin-top: 2px;
-}  
-  h4{
+  .input-search {
+    margin-top: 2px;
+  }
+
+  h4 {
     font-weight: 400;
     padding-top: 5px;
-    color:bisque;
+    color: silver;
   }
-  
+
   .delivery-section {
-    margin-top: 190px;
+    margin-top: 170px;
     font-size: 22px;
   }
-  
+
+
 `;
 
 export const ContactIcon = styled(FcContacts)``;

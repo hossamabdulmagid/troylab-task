@@ -1,6 +1,7 @@
 import './App.css';
 import Sidebar from "./components/sidebar/siderbar.component";
 import {RapperAppComponent} from './App.styles'
+import Footer from "./components/footer/footer.component";
 
 const App = () => {
     return (
@@ -10,20 +11,14 @@ const App = () => {
                     <header className="App-header">
                         <Sidebar/>
                     </header>
-
-                    <div className={"footer"}>
-
-                    </div>
-
-
                 </div>
+                <Footer/>
             </RapperAppComponent>
-            <h1 className={'text-center'}>
-                Footer
-            </h1>
+
         </>
 
-    );
+    )
+        ;
 }
 
 export default App;
