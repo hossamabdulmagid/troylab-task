@@ -11,8 +11,11 @@ const App = () => {
                     <header className="App-header">
                         <Sidebar/>
                     </header>
+
                 </div>
+
                 <Footer/>
+
             </RapperAppComponent>
 
         </>
