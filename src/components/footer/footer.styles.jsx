@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {NavLink} from "react-router-dom";
 
 import {RiShoppingCartLine} from "react-icons/ri";
 import {BsWallet2} from "react-icons/bs";
@@ -9,7 +10,7 @@ import {GoHome} from "react-icons/go";
 
 export const RapperFooterComponent = styled.div`
   color: dimgray;
- 
+
   .footer {
     height: 30px;
     position: absolute;
@@ -27,14 +28,21 @@ export const RapperFooterComponent = styled.div`
     margin: 2px 105px 2px 105px;
     padding: 2px;
   }
-  .mob{
-    display:block;
-    pading:3px;
-    margin:5px;
+
+  .mob {
+    display: block;
+    pading: 3px;
+    margin: 5px;
   }
+
 
 `;
 
+
+export const NavLinK = styled(NavLink)`
+  text-decoration: none;
+  color: dimgray;
+`;
 
 export const HomeIcon = styled(GoHome)``;
 export const WalletIcon = styled(BsWallet2)``;
