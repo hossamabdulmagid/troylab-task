@@ -1,13 +1,5 @@
 import {Col, Container, Row} from 'react-bootstrap'
-import {
-    HomeIcon,
-    HorizontalIcon,
-    NavLinK,
-    RapperFooterComponent,
-    ReceiptIcon,
-    ShopIcon,
-    WalletIcon
-} from "./footer.styles";
+import {HomeIcon, HorizontalIcon, RapperFooterComponent, ReceiptIcon, ShopIcon, WalletIcon} from "./footer.styles";
 import {NavLink} from "react-router-dom";
 
 const Footer = () => {
@@ -17,6 +9,7 @@ const Footer = () => {
     };
     let UnActiveStyle = {
         textDecoration: 'none',
+        color: 'dimgray'
     };
 
     let activeClassName = "underline";
@@ -30,7 +23,7 @@ const Footer = () => {
                                 <ul>
                                     <li className={'web'}>
                                         <NavLink
-                                            to="/"
+                                            to="/more"
                                             style={({isActive}) =>
                                                 isActive ? activeStyle : UnActiveStyle
                                             }
@@ -43,7 +36,7 @@ const Footer = () => {
                                     </li>
                                     <li className={'web'}>
                                         <NavLink
-                                            to="/shop"
+                                            to="/shopping"
                                             style={({isActive}) =>
                                                 isActive ? activeStyle : UnActiveStyle
                                             }
@@ -106,37 +99,65 @@ const Footer = () => {
                             <Col>
                                 <div className={'footer'}>
                                     <ul>
-                                        <li className={'mob'}>
-                                            <h3>
-                                                <HorizontalIcon/>
-                                            </h3>
-                                            <span>المزيد </span>
 
+                                        <li className={'mob'}>
+                                            <NavLink
+                                                to="/more"
+                                                style={({isActive}) =>
+                                                    isActive ? activeStyle : UnActiveStyle
+                                                }
+                                            >
+                                                <h3>
+                                                    <HorizontalIcon/>
+                                                </h3>
+                                                <span>المزيد </span>
+                                            </NavLink>
                                         </li>
 
                                         <li className={'mob'}>
-                                            <h3>
-                                                <ShopIcon/>
-                                            </h3>
-                                            <span> طلبات مسبقه</span>
+                                            <NavLink
+                                                to="/shoppnig"
+                                                style={({isActive}) =>
+                                                    isActive ? activeStyle : UnActiveStyle
+                                                }
+                                            >
+                                                <h3>
+                                                    <ShopIcon/>
+                                                </h3>
+                                                <span> طلبات مسبقه</span>
+                                            </NavLink>
                                         </li>
 
                                         <li className={'mob'}>
-                                            <h3>
-                                                <ReceiptIcon/>
-                                            </h3>
-                                            <span>المبيعات</span>
+                                            <NavLink
+                                                to="/orders"
+                                                style={({isActive}) =>
+                                                    isActive ? activeStyle : UnActiveStyle
+                                                }
+                                            >
+                                                <h3>
+                                                    <ReceiptIcon/>
+                                                </h3>
+                                                <span>المبيعات</span>
+                                            </NavLink>
                                         </li>
 
                                         <li className={'mob'}>
-                                            <h3>
-                                                <WalletIcon/>
-                                            </h3>
-                                            <span>المحفظة</span>
+                                            <NavLink
+                                                to="/wallet"
+                                                style={({isActive}) =>
+                                                    isActive ? activeStyle : UnActiveStyle
+                                                }
+                                            >
+                                                <h3>
+                                                    <WalletIcon/>
+                                                </h3>
+                                                <span>المحفظة</span>
+                                            </NavLink>
                                         </li>
 
                                         <li className={'mob'}>
-                                            <NavLinK
+                                            <NavLink
                                                 to="/"
                                                 style={({isActive}) =>
                                                     isActive ? activeStyle : UnActiveStyle
@@ -147,7 +168,7 @@ const Footer = () => {
                                                     <HomeIcon/>
                                                 </h3>
                                                 <span>الرئيسية</span>
-                                            </NavLinK>
+                                            </NavLink>
 
                                         </li>
                                     </ul>

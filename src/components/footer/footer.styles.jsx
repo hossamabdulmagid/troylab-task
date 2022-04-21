@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
 
 import {RiShoppingCartLine} from "react-icons/ri";
 import {BsWallet2} from "react-icons/bs";
@@ -38,11 +37,6 @@ export const RapperFooterComponent = styled.div`
 
 `;
 
-
-export const NavLinK = styled(NavLink)`
-  text-decoration: none;
-  color: dimgray;
-`;
 
 export const HomeIcon = styled(GoHome)``;
 export const WalletIcon = styled(BsWallet2)``;
