@@ -1,33 +1,54 @@
 import {Card} from 'react-bootstrap';
+import {ExclamationIcon, PlusIcon, RapperHomePage, RunIcon} from './homepage.styles'
 
 const HomePage = () => {
 
     return (
-        <div>
-            <div className={"container"}>
-                <div className={"row"}>
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(idx => {
-                        return (
-                            <>
-                                <div className={"col-sm-3"}>
-                                    <Card style={{width: '18rem', margin: '5px', padding: '5px', borderRadius: '5px'}}>
-                                        <Card.Body>
-                                            <Card.Title>Card Title</Card.Title>
-                                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                                            <Card.Text>
-                                                Some quick example text to build on the card title
+        <RapperHomePage className={"container"}>
+            <div className={"row"}>
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((singleProduct, idx) => {
+                    return (
 
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                            </>
-                        )
-                    })}
-                </div>
+                        <div className={"col-sm-3"}>
+                            <Card style={{width: '18rem', margin: '5px', padding: '5px', borderRadius: '10px'}}>
+                                <Card.Body>
+                                    <Card.Title>
+                                        <button className={'btn btn-light'} size={'xs'}>
+                                                    <span className={'kcal'}>
+                                                    <RunIcon/> {" "}
+                                                        200 Kcal
+                                                    </span>
+                                        </button>
+                                        <ExclamationIcon/>
+                                    </Card.Title>
+                                    <div className={'card-img'}>
+                                        <img src={'https://cdn.salla.sa/BDYO6CMcN2T5BqxOoOGvUWHSqcHQBd5Rz5jk4SwV.jpg'}
+                                             alt={'https://cdn.salla.sa/BDYO6CMcN2T5BqxOoOGvUWHSqcHQBd5Rz5jk4SwV.jpg'}
+                                             className={'img'}
+                                        />
+                                    </div>
+                                    <Card.Text>
+                                        <span>عصير تفاح 250 مل</span>
+                                        <p>
+                                            الكمية بالمخزون
+                                            {": "}
+                                            <span className={'text'}>
+                                              5
+                                         </span>
+                                        </p>
+                                    </Card.Text>
+                                    <div className={'footer'}>
+                                        <PlusIcon/>
+                                        <span className={'kcal'} dir={"rtl"}> 7.5 ريال  </span>
+                                    </div>
+                                </Card.Body>
+                            </Card>
+                        </div>
+
+                    )
+                })}
             </div>
-
-        </div>
+        </RapperHomePage>
     )
 }
 

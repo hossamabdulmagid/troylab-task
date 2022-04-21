@@ -9,7 +9,7 @@ export const RapperSidebarComponent = styled.div`
   color: silver;
 
   .sidenav {
-    height: 89%;
+    height: 100%;
     width: 300px;
     position: fixed;
     z-index: 1;
