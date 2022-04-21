@@ -4,7 +4,6 @@ import {FcContacts, FcSearch} from "react-icons/fc";
 import {MdDeliveryDining} from "react-icons/md";
 import {AiFillCloseCircle} from "react-icons/ai";
 
-
 export const RapperSidebarComponent = styled.div`
   background-color: #16A79B;
   color: silver;

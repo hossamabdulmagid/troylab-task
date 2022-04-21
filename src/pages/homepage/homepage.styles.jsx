@@ -1,20 +1,35 @@
 import styled from 'styled-components'
 import {AiFillPlusCircle, AiOutlineExclamationCircle} from "react-icons/ai";
 
+import {GiRun, GiSandwich} from "react-icons/gi";
+import {Button} from 'react-bootstrap';
+import {FaHamburger, FaPizzaSlice, FaWineGlass} from "react-icons/fa";
 
-import {GiRun} from "react-icons/gi";
 
+export const SandwichIcon = styled(GiSandwich)`
+  color: orangered;
+`;
+
+export const DrinkIcon = styled(FaWineGlass)`
+  color: limegreen;
+`;
+export const PizzaIcon = styled(FaPizzaSlice)`
+  color: orange;
+`;
+export const BurgerIcon = styled(FaHamburger)`
+  color: orange;
+`;
+
+
+export const BUTTON = styled(Button)`
+  margin: 5px;
+`;
 export const RapperHomePage = styled.div`
-  .header {
-    background-color: rgb(233, 235, 239);
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: black;
-    margin: 0 auto;
+  .filter-section {
+    margin: 20px;
+    text-align: center;
   }
+
 
   span {
     padding: 2px;
@@ -41,8 +56,8 @@ export const RapperHomePage = styled.div`
     padding: 5px;
 
     .img {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 90px;
       margin: 10px;
     }
   }

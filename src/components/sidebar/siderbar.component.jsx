@@ -1,4 +1,12 @@
-import {CloseIcon, CloseIconRed, ContactIcon, DeliverIcon, RapperSidebarComponent, SearchIcon} from './sidebar.styles'
+import {
+    BUTTON,
+    CloseIcon,
+    CloseIconRed,
+    ContactIcon,
+    DeliverIcon,
+    RapperSidebarComponent,
+    SearchIcon
+} from './sidebar.styles'
 import {Card, Col, Form, Row} from 'react-bootstrap'
 import {useRef, useState} from "react";
 
@@ -15,7 +23,7 @@ const Sidebar = () => {
         }
     }
 
-    let refInput = useRef(null);
+    const refInput = useRef(null);
 
     const getFocus = (refInput) => {
         refInput && refInput.current && refInput.current.focus();
@@ -23,6 +31,8 @@ const Sidebar = () => {
 
     return (
         <>
+
+
             <Col bsPrefix="d-none d-md-flex d-lg-flex  d-xl-flex center-item">
                 <RapperSidebarComponent>
                     <div className="sidenav-web">

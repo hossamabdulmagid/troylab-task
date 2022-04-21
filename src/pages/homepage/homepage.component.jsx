@@ -1,17 +1,35 @@
 import {Card} from 'react-bootstrap';
-import {ExclamationIcon, PlusIcon, RapperHomePage, RunIcon} from './homepage.styles'
+import {
+    BurgerIcon,
+    BUTTON,
+    DrinkIcon,
+    ExclamationIcon,
+    PizzaIcon,
+    PlusIcon,
+    RapperHomePage,
+    RunIcon,
+    SandwichIcon
+} from './homepage.styles'
 
 const HomePage = () => {
 
     return (
         <RapperHomePage className={"container"}>
             <div className={"row"}>
+                <div className={''} dir={'ltr'}>
+                    <div className={'filter-section'}>
+                        <BUTTON variant="light">سندوتشات {" "}<SandwichIcon/></BUTTON>{' '}
+                        <BUTTON variant="light"> مشروبات{' '}<DrinkIcon/></BUTTON>
+                        <BUTTON variant="light"> برجر {' '}<BurgerIcon/></BUTTON>{' '}
+                        <BUTTON variant="light"> بيتزا{' '}<PizzaIcon/></BUTTON>{' '}
+                        <BUTTON variant="success">الكل</BUTTON>
+
+                    </div>
+                </div>
                 {[1, 2, 3, 4, 5, 6, 7, 8].map(idx => {
                     return (
                         <div className={"col-sm-3"} key={idx}>
-                            <Card
-                                className={'card'}
-                            >
+                            <Card className={'card'}>
                                 <Card.Body>
                                     <Card.Title className={'btn btn-light kcal'}>
                                         <RunIcon/> {" "}
@@ -27,14 +45,14 @@ const HomePage = () => {
                                         />
                                     </div>
                                     <Card.Text>
-                                        <span>عصير تفاح 250 مل</span>
-                                        <div>
+                                        <small>عصير تفاح 250 مل</small>
+                                        <small className={'d-block'}>
                                             الكمية بالمخزون
                                             {": "}
                                             <span className={'text'}>
                                                {5}
                                          </span>
-                                        </div>
+                                        </small>
                                     </Card.Text>
                                     <div className={'footer'}>
                                         <PlusIcon/>
