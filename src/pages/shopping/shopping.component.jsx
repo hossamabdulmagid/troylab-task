@@ -4,7 +4,6 @@ import {BUTTON, ExclamationIcon, PlusIcon, RapperHomePage, RunIcon,} from '../ho
 import InputGroup from 'react-bootstrap/InputGroup'
 
 const ShoppingComponent = () => {
-
     return (
         <RapperHomePage className={"container"}>
             <div className={"row"}>
@@ -46,7 +45,7 @@ const ShoppingComponent = () => {
                                     <div className={'card-img'}>
                                         <img
                                             src={'https://spinneys-egypt.com/index.php/cache/large/product/6435/EXkDm4hb0oEUH3ZDVuJU6hUZ74Kzx7CCrWSaaHbw.jpg'}
-                                            alt={'image-still-loading'}
+                                            alt={'logo-still-loading'}
                                             className={'img'}
                                         />
                                     </div>
