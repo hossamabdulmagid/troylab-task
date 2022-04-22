@@ -11,22 +11,30 @@ import ProductlistComponent from './productlist.component'
 
 const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
 
-
-    const filterPosts = (filterItem) => {
-        if (!filterItem) {
-            return allPosts;
-        }
+    const filterPosts = ({text = "", category = "all"}) => {
         return allPosts
-            .filter((allPosts) => allPosts &&
-                (allPosts.title.includes(filterItem) || allPosts.description.includes(filterItem) || allPosts.category.includes(filterItem)));
+            .filter((allPosts) => {
+                if (!text) return true;
+
+                return allPosts &&
+                    (allPosts.title.includes(text) || allPosts.description.includes(text) || allPosts.category.includes(text))
+            })
+            .filter((allPosts) => {
+                if (category == "all") return true;
+                return allPosts.category == category;
+            });
     }
 
-    const [filterItem, setFilterItem] = useState("");
+
+    const [filterItem, setFilterItem] = useState({
+        text: "",
+        category: "all"
+    });
 
     const filterdPosts = filterPosts(filterItem);
 
     const updatedFilterHandler = (e) => {
-        setFilterItem(e.target.value);
+        setFilterItem({...filterItem, text: e.target.value});
     }
 
 
@@ -66,18 +74,25 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                                     aria-describedby="inputGroup-sizing-default"
                                     onChange={updatedFilterHandler}
                                     type="search"
-
-
                                 />
                             </InputGroup>
                         </Col>
                     </RapperShoppingComponent>
 
-                    <div className={''} dir={'ltr'}>
+                    <div dir={'ltr'}>
                         <div className={'filter-section'}>
+                            <BUTTON variant="light" size={'sm'} onClick={() => setFilterItem({
+                                ...filterItem,
+                                category: "all"
+                            })}>
+                                <CloseIcon/>{"All"}
+                            </BUTTON>
                             {getUnique(allPosts, "category").map((singleCategory, idx) => {
                                 return (
-                                    <BUTTON variant="light" size={'sm'} key={idx}>
+                                    <BUTTON variant="light" size={'sm'} key={idx} onClick={() => setFilterItem({
+                                        ...filterItem,
+                                        category: singleCategory.category
+                                    })}>
                                         <CloseIcon/>{singleCategory.category}
                                     </BUTTON>
 
@@ -87,23 +102,17 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                     </div>
                     <div className="card-group">
                         {filterdPosts.length === 0 && !loading ?
-                            <div className={'container'}>
+                            (<div className={'container'}>
                                 <h2>No post found matching your filter</h2>
-                            </div>
-
-
+                            </div>)
                             : null}
                         {!loading ?
-
-
-                            <ProductlistComponent allPosts={filterdPosts}/>
-                            :
-                            <div className={'container text-center'}>
+                            (<ProductlistComponent allPosts={filterdPosts}/>) :
+                            (<div className={'container text-center'}>
                                 <Spinner animation="border" role="status">
                                     <span className="visually-hidden">Loading...</span>
                                 </Spinner>
-
-                            </div>
+                            </div>)
                         }
                     </div>
                 </div>
