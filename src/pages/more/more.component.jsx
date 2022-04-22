@@ -1,7 +1,10 @@
 const MoreComponent = () => {
+    window.scrollTo(0, 0);
     return (
-        <div className={'container text-center'} style={{marginBottom: '800px'}}>
-            welcome From More
+        <div className={'container text-center'} style={{marginTop:'50px',marginBottom: '800px'}}>
+            <h1>
+                welcome from more page
+            </h1>
         </div>
     )
 }
