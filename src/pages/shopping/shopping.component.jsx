@@ -49,8 +49,6 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
             .map((e) => e[comp])
             // store the indexes of the unique objects
             .map((e, i, final) => final.indexOf(e) === i && i)
-
-            // eliminate the false indexes & return unique objects
             .filter((e) => allPosts[e])
             .map((e) => allPosts[e]);
 
