@@ -27,7 +27,7 @@ const HomePage = () => {
                 </div>
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(idx => {
                     return (
-                        <div className={"col-sm-3"} key={idx}  style={{marginBottom: '15px', padding: '15px'}}>
+                        <div className={"col-sm-3"} key={idx}>
                             <Card className={'card'}>
                                 <Card.Body>
                                     <Card.Title className={'btn btn-light kcal'}>
@@ -58,11 +58,10 @@ const HomePage = () => {
                                     </div>
                                 </Card.Body>
                             </Card>
-                            <br />
-                            <br/>
                         </div>
                     )
                 })}
+
             </div>
         </RapperHomePage>
     )

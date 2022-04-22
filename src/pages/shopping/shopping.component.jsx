@@ -4,7 +4,7 @@ import {doGetPosts} from "../../redux/posts/postsAction";
 
 import {Card, Col, FormControl, Spinner} from "react-bootstrap";
 import {BUTTON, ExclamationIcon, PlusIcon, RunIcon} from "../homepage/homepage.styles";
-import {CloseIcon, RapperShoppingComponent, SearchIcon} from "../shopping/shopping.styles";
+import {CloseIcon, RapperShoppingComponent, SearchIcon,Rapper} from "../shopping/shopping.styles";
 import InputGroup from "react-bootstrap/InputGroup";
 
 const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
@@ -13,6 +13,7 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
     }, [doGetPosts])
 
     return (
+        <Rapper>
         <div className={'container text-center'}>
             <div className={'row'}>
                 <RapperShoppingComponent>
@@ -44,7 +45,6 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                         .map((singlePost, idx) => {
                             return (
                                 <div className={"col-sm-3"} key={idx} style={{marginBottom: '5px', padding: '15px'}}>
-                                    <RapperShoppingComponent>
                                         <Card className={'card'}>
 
                                             <Card.Body>
@@ -76,9 +76,7 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                                                 </div>
                                             </Card.Body>
                                         </Card>
-                                        <br/>
-                                        <br/>
-                                    </RapperShoppingComponent>
+
 
                                 </div>
                             )
@@ -94,6 +92,7 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
 
             </div>
         </div>
+        </Rapper>
     )
 }
 

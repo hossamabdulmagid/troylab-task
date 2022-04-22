@@ -11,17 +11,10 @@ export const CloseIcon = styled(AiFillCloseCircle)`
 
 export const SearchIcon = styled(BsSearch)``;
 
-
-export const RapperShoppingComponent = styled.div`
-  text-align: -webkit-center;
-  margin-top: 20px;
-
-  .kcal {
-    float: left;
-  }
-
+export const Rapper = styled.div`
+  margin-bottom: 110px;
   .card {
-
+    border-radius: 15px;
     text-align: center;
     margin: 0 auto;
     text-align: center;
@@ -31,9 +24,24 @@ export const RapperShoppingComponent = styled.div`
       width: 120px;
       height: 90px;
       margin: 25px;
-      display: block;
       padding:5px;
     }
+
+`;
+
+
+
+export const RapperShoppingComponent = styled.div`
+  margin-bottom: 20px;
+
+  text-align: -webkit-center;
+  margin-top: 20px;
+
+  .kcal {
+    float: left;
+  }
+
+ 
   }
 
 

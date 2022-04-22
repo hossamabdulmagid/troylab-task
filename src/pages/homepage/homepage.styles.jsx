@@ -25,6 +25,7 @@ export const BUTTON = styled(Button)`
   margin: 5px;
 `;
 export const RapperHomePage = styled.div`
+  margin-bottom: 110px;
   .filter-section {
     margin: 20px;
     text-align: center;
@@ -58,14 +59,14 @@ export const RapperHomePage = styled.div`
     .img {
       width: 120px;
       height: 90px;
-      margin: 10px;
+      margin: 5px;
     }
   }
 
   .card {
-    margin: 0 auto;
-    padding:0 ;
-    borderRadius: 10px;
+    margin: 5px;
+    padding:10px;
+    border-radius: 15px;
     text-align: center;
   }
 

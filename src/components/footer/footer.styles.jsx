@@ -12,21 +12,25 @@ export const RapperFooterComponent = styled.div`
 
   .footer {
     position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
     background-color: white;
     text-align: center;
     padding: 5px;
+    margin-top:120px;
 
   }
 
   ul {
     display: flex;
+    align-items: center;
+    text-align: center;
+
   }
 
   li {
     list-style: none;
-    justify-content: space-between;
     cursor: pointer;
     padding: 5px;
   }

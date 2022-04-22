@@ -22,7 +22,6 @@ export const doGetPosts = () => {
         dispatch(PostStart())
         axios.get(`https://fakestoreapi.com/products`)
             .then((res) => {
-                console.log(res.data)
                 if (res.status === 200) {
                     dispatch(PostSuccess(res.data))
                 }

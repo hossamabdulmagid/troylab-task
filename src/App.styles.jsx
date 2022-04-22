@@ -10,6 +10,8 @@ export const RapperAppComponent = styled.div`
       justify-content: center;
       font-size: calc(10px + 2vmin);
       margin: 0 auto;
+      height: auto;
+
     }
   }
 
