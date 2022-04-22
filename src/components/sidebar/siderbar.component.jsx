@@ -1,12 +1,4 @@
-import {
-    BUTTON,
-    CloseIcon,
-    CloseIconRed,
-    ContactIcon,
-    DeliverIcon,
-    RapperSidebarComponent,
-    SearchIcon
-} from './sidebar.styles'
+import {CloseIcon, CloseIconRed, ContactIcon, DeliverIcon, RapperSidebarComponent, SearchIcon} from './sidebar.styles'
 import {Card, Col, Form, Row} from 'react-bootstrap'
 import {useRef, useState} from "react";
 
@@ -25,9 +17,6 @@ const Sidebar = () => {
 
     const refInput = useRef(null);
 
-    const getFocus = (refInput) => {
-        refInput && refInput.current && refInput.current.focus();
-    }
 
     return (
         <>
@@ -45,7 +34,7 @@ const Sidebar = () => {
                                 </Col>
                                 <Col xs={2} md={2} lg={2}>
                                     <h2>
-                                        <SearchIcon onClick={getFocus}/>
+                                        <SearchIcon/>
                                     </h2>
                                 </Col>
                                 <Col xs={8} md={8} lg={8}>
@@ -212,7 +201,7 @@ const Sidebar = () => {
                                 </Col>
                                 <Col xs={6} md={6} lg={2}>
                                     <h2>
-                                        <SearchIcon onClick={getFocus}/>
+                                        <SearchIcon/>
                                     </h2>
                                 </Col>
                                 <Col xs={12} md={12}>
