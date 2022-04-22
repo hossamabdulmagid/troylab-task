@@ -4,7 +4,7 @@ import {doGetPosts} from "../../redux/posts/postsAction";
 
 import {Col, FormControl, Spinner} from "react-bootstrap";
 import {BUTTON} from "../homepage/homepage.styles";
-import {CloseIcon, Rapper, RapperShoppingComponent, SearchIcon} from "../shopping/shopping.styles";
+import {CloseIcon, Rapper, RapperShoppingComponent, SearchIcon,DishIcon} from "../shopping/shopping.styles";
 import InputGroup from "react-bootstrap/InputGroup";
 
 import ProductlistComponent from './productlist.component'
@@ -75,6 +75,12 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                                     onChange={updatedFilterHandler}
                                     type="search"
                                 />
+                                <InputGroup.Text id="inputGroup-sizing-default">
+                                    <h5>
+                                        <DishIcon/>
+                                    </h5>
+                                </InputGroup.Text>
+
                             </InputGroup>
                         </Col>
                     </RapperShoppingComponent>

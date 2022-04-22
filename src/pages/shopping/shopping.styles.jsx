@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import {AiFillCloseCircle, AiFillPlusCircle} from "react-icons/ai";
 import {BsSearch} from "react-icons/bs";
 import {GiRun} from "react-icons/gi";
+import { BiDish } from "react-icons/bi";
+export const DishIcon = styled(BiDish)`
+margin-top:8px;
+`;
 
 
 export const CloseIcon = styled(AiFillCloseCircle)`
@@ -11,6 +15,7 @@ export const CloseIcon = styled(AiFillCloseCircle)`
 
 
 export const SearchIcon = styled(BsSearch)``;
+
 export const RunIcon = styled(GiRun)`
 text-align: right;
 `;
