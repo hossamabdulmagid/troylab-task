@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import {AiFillCloseCircle} from "react-icons/ai";
+import {AiFillCloseCircle, AiFillPlusCircle} from "react-icons/ai";
 import {BsSearch} from "react-icons/bs";
+import {GiRun} from "react-icons/gi";
 
 
 export const CloseIcon = styled(AiFillCloseCircle)`
@@ -10,8 +11,15 @@ export const CloseIcon = styled(AiFillCloseCircle)`
 
 
 export const SearchIcon = styled(BsSearch)``;
-
+export const RunIcon = styled(GiRun)`
+text-align: right;
+`;
 export const Rapper = styled.div`
+  
+  .pull-left{
+    float: left;
+  }
+}
   margin-bottom: 110px;
   .card {
     border-radius: 15px;
@@ -26,6 +34,14 @@ export const Rapper = styled.div`
       margin: 25px;
       padding:5px;
     }
+
+`;
+export const PlusIcon = styled(AiFillPlusCircle)`
+  color: #16A79B;
+  float: right;
+  margin-top: 8px;
+
+
 
 `;
 

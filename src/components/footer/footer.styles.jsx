@@ -9,9 +9,6 @@ import {GoHome} from "react-icons/go";
 
 export const RapperFooterComponent = styled.div`
 
-  nav{
-    align-items: center;
-  }
   color: dimgray;
 
   .footer {
@@ -27,8 +24,6 @@ export const RapperFooterComponent = styled.div`
 
   ul {
     display: flex;
-    align-items: center;
-    text-align: center;
 
   }
 
