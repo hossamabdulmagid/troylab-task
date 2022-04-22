@@ -63,8 +63,8 @@ export const RapperHomePage = styled.div`
   }
 
   .card {
-    margin: 5px;
-    padding: 5px;
+    margin: 0 auto;
+    padding:0 ;
     borderRadius: 10px;
     text-align: center;
   }

@@ -11,37 +11,37 @@ export const RapperFooterComponent = styled.div`
   color: dimgray;
 
   .footer {
-    height: 30px;
-    position: absolute;
-    width: 250px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
     text-align: center;
+    padding: 5px;
+
   }
 
   ul {
     display: flex;
-
   }
 
   li {
     list-style: none;
     justify-content: space-between;
     cursor: pointer;
+    padding: 5px;
   }
 
   .web {
     margin: 2px 105px 2px 105px;
     padding: 2px;
     cursor: pointer;
-
   }
 
   .mob {
     display: block;
-    pading: 3px;
-    margin: 5px;
+    pading: 13px;
     cursor: pointer;
   }
-
 
 `;
 

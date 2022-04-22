@@ -31,20 +31,22 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                     </Col>
                 </RapperShoppingComponent>
 
-                    <div className={''} dir={'ltr'}>
-                        <div className={'filter-section'}>
-                            <BUTTON variant="light" size={'sm'}><CloseIcon/> طبق متكامل</BUTTON>
-                            <BUTTON variant="light" size={'sm'}><CloseIcon/> سندوتشات </BUTTON>{' '}
-                        </div>
+                <div className={''} dir={'ltr'}>
+                    <div className={'filter-section'}>
+                        <BUTTON variant="light" size={'sm'}><CloseIcon/> طبق متكامل</BUTTON>
+                        <BUTTON variant="light" size={'sm'}><CloseIcon/> سندوتشات </BUTTON>{' '}
                     </div>
+                </div>
 
-                    {!loading ?
-                        allPosts && allPosts
-                            .filter((singlePost, idx) => idx < 28)
-                            .map((singlePost, idx) => {
-                                return (
-                                    <div className={"col-sm-3"} key={idx}>
+                {!loading ?
+                    allPosts && allPosts
+                        .filter((singlePost, idx) => idx < 25)
+                        .map((singlePost, idx) => {
+                            return (
+                                <div className={"col-sm-3"} key={idx} style={{marginBottom: '5px', padding: '15px'}}>
+                                    <RapperShoppingComponent>
                                         <Card className={'card'}>
+
                                             <Card.Body>
                                                 <Card.Title className={'btn btn-light kcal'}>
                                                     <RunIcon/> {" "}
@@ -56,7 +58,6 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                                                         src={singlePost.image}
                                                         alt={singlePost.title}
                                                         className={'img'}
-                                                        style={{width: '50px', height: '50px'}}
                                                     />
                                                 </div>
                                                 <Card.Text>
@@ -65,8 +66,8 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                                                         الكمية بالمخزون
                                                         {": "}
                                                         <span className={'text'}>
-                                               {5}
-                                         </span>
+                                                             {5}
+                                                         </span>
                                                     </small>
                                                 </Card.Text>
                                                 <div className={'footer'}>
@@ -75,17 +76,21 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                                                 </div>
                                             </Card.Body>
                                         </Card>
-                                    </div>
-                                )
-                            })
-                        :
-                        <div className={'container text-center'}>
-                            <Spinner animation="border" role="status">
-                                <span className="visually-hidden">Loading...</span>
-                            </Spinner>
+                                        <br/>
+                                        <br/>
+                                    </RapperShoppingComponent>
 
-                        </div>
-                    }
+                                </div>
+                            )
+                        })
+                    :
+                    <div className={'container text-center'}>
+                        <Spinner animation="border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </Spinner>
+
+                    </div>
+                }
 
             </div>
         </div>

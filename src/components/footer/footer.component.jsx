@@ -16,7 +16,7 @@ const Footer = () => {
         <RapperFooterComponent>
             <nav>
                 <Container className={"text center align-items-center"}>
-                    <Row bsPrefix="d-none d-md-flex d-lg-flex  d-xl-flex center-item">
+                    <Row bsPrefix="d-none d-md-flex d-lg-flex  d-xl-flex center-item" >
                         <Col>
                             <div className={'footer'}>
                                 <ul>
