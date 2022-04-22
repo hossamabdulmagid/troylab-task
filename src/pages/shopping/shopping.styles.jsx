@@ -15,7 +15,10 @@ export const RunIcon = styled(GiRun)`
 text-align: right;
 `;
 export const Rapper = styled.div`
-  
+  h2{
+    padding:10px;
+    margin-top:30px;
+  }
   .pull-left{
     float: left;
   }

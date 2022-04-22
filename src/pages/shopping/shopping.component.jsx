@@ -1,13 +1,35 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {connect} from 'react-redux';
 import {doGetPosts} from "../../redux/posts/postsAction";
 
-import {Card, Col, FormControl, Spinner} from "react-bootstrap";
-import {BUTTON, ExclamationIcon} from "../homepage/homepage.styles";
-import {CloseIcon, PlusIcon, Rapper, RapperShoppingComponent, RunIcon, SearchIcon} from "../shopping/shopping.styles";
+import {Col, FormControl, Spinner} from "react-bootstrap";
+import {BUTTON} from "../homepage/homepage.styles";
+import {CloseIcon, Rapper, RapperShoppingComponent, SearchIcon} from "../shopping/shopping.styles";
 import InputGroup from "react-bootstrap/InputGroup";
 
+import ProductlistComponent from './productlist.component'
+
 const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
+
+
+    const filterPosts = (filterItem) => {
+        if (!filterItem) {
+            return allPosts;
+        }
+        return allPosts
+            .filter((allPosts) => allPosts &&
+                (allPosts.title.includes(filterItem) || allPosts.description.includes(filterItem) || allPosts.category.includes(filterItem)));
+    }
+
+    const [filterItem, setFilterItem] = useState("");
+
+    const filterdPosts = filterPosts(filterItem);
+
+    const updatedFilterHandler = (e) => {
+        setFilterItem(e.target.value);
+    }
+
+
     useEffect(() => {
         doGetPosts()
     }, [doGetPosts])
@@ -42,6 +64,10 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                                 <FormControl
                                     aria-label="Default"
                                     aria-describedby="inputGroup-sizing-default"
+                                    onChange={updatedFilterHandler}
+                                    type="search"
+
+
                                 />
                             </InputGroup>
                         </Col>
@@ -60,54 +86,17 @@ const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
                         </div>
                     </div>
                     <div className="card-group">
+                        {filterdPosts.length === 0 && !loading ?
+                            <div className={'container'}>
+                                <h2>No post found matching your filter</h2>
+                            </div>
 
+
+                            : null}
                         {!loading ?
-                            allPosts && allPosts
-                                .filter((singlePost, idx) => idx < 25)
-                                .map((singlePost, idx) => {
-                                    return (
-                                        <div className={"col-sm-3"} key={idx}
-                                             style={{marginBottom: '5px', padding: '15px'}}>
-                                            <Card className={'card  h-100'}>
-
-                                                <Card.Body>
-                                                    <Card.Title className={'btn btn-light pull-left'}>
-                                                        <RunIcon/> {" "}
-                                                        200 Kcal
-                                                    </Card.Title>
-                                                    <ExclamationIcon/>
-                                                    <div className={'card-img'}>
-                                                        <img
-                                                            src={singlePost.image}
-                                                            alt={singlePost.title}
-                                                            className={'img'}
-                                                        />
-                                                    </div>
-                                                    <Card.Text>
-                                                        <small>
-                                                            {singlePost.title}
-                                                        </small>
-                                                        <small className={'d-block'}>
-                                                            count
-                                                            {": "}
-                                                            <span className={'text'}>
-                                                             {singlePost.rating.count}
-                                                         </span>
-                                                        </small>
-                                                    </Card.Text>
-                                                    <div className={'footer'}>
-                                                    </div>
-                                                </Card.Body>
-                                                <div className={'card-footer'}>
-                                                    <PlusIcon/>
-                                                    <span className={'kcal'} dir={"rtl"}>${singlePost.price}</span>
-                                                </div>
-                                            </Card>
 
 
-                                        </div>
-                                    )
-                                })
+                            <ProductlistComponent allPosts={filterdPosts}/>
                             :
                             <div className={'container text-center'}>
                                 <Spinner animation="border" role="status">
