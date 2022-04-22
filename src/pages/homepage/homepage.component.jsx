@@ -23,7 +23,6 @@ const HomePage = () => {
                         <BUTTON variant="light"> برجر {' '}<BurgerIcon/></BUTTON>{' '}
                         <BUTTON variant="light"> بيتزا{' '}<PizzaIcon/></BUTTON>{' '}
                         <BUTTON variant="success">الكل</BUTTON>
-
                     </div>
                 </div>
                 {[1, 2, 3, 4, 5, 6, 7, 8].map(idx => {
@@ -36,7 +35,6 @@ const HomePage = () => {
                                         200 Kcal
                                     </Card.Title>
                                     <ExclamationIcon/>
-
                                     <div className={'card-img'}>
                                         <img
                                             src={'https://spinneys-egypt.com/index.php/cache/large/product/6435/EXkDm4hb0oEUH3ZDVuJU6hUZ74Kzx7CCrWSaaHbw.jpg'}
@@ -61,7 +59,6 @@ const HomePage = () => {
                                 </Card.Body>
                             </Card>
                         </div>
-
                     )
                 })}
             </div>
