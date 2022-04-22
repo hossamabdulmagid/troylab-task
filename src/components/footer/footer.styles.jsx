@@ -31,12 +31,15 @@ export const RapperFooterComponent = styled.div`
   .web {
     margin: 2px 105px 2px 105px;
     padding: 2px;
+    cursor: pointer;
+
   }
 
   .mob {
     display: block;
     pading: 3px;
     margin: 5px;
+    cursor: pointer;
   }
 
 

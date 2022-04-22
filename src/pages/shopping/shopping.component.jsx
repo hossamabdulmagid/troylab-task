@@ -1,13 +1,20 @@
-import {Card, Col, FormControl} from 'react-bootstrap';
-import {CloseIcon, RapperShoppingComponent, SearchIcon} from './shopping.styles'
-import {BUTTON, ExclamationIcon, PlusIcon, RapperHomePage, RunIcon,} from '../homepage/homepage.styles'
-import InputGroup from 'react-bootstrap/InputGroup'
+import {useEffect} from "react";
+import {connect} from 'react-redux';
+import {doGetPosts} from "../../redux/posts/postsAction";
 
-const ShoppingComponent = () => {
+import {Card, Col, FormControl, Spinner} from "react-bootstrap";
+import {BUTTON, ExclamationIcon, PlusIcon, RunIcon} from "../homepage/homepage.styles";
+import {CloseIcon, RapperShoppingComponent, SearchIcon} from "../shopping/shopping.styles";
+import InputGroup from "react-bootstrap/InputGroup";
+
+const ShoppingComponent = ({doGetPosts, loading, allPosts}) => {
+    useEffect(() => {
+        doGetPosts()
+    }, [doGetPosts])
+
     return (
-        <RapperHomePage className={"container"}>
-            <div className={"row"}>
-
+        <div className={'container text-center'}>
+            <div className={'row'}>
                 <RapperShoppingComponent>
                     <Col xs={8} md={8} lg={8} xl={8}>
                         <InputGroup className="mb-3">
@@ -24,54 +31,75 @@ const ShoppingComponent = () => {
                     </Col>
                 </RapperShoppingComponent>
 
-
-                <div className={''} dir={'ltr'}>
-                    <div className={'filter-section'}>
-                        <BUTTON variant="light" size={'sm'}><CloseIcon/> طبق متكامل</BUTTON>
-                        <BUTTON variant="light" size={'sm'}><CloseIcon/> سندوتشات </BUTTON>{' '}
+                    <div className={''} dir={'ltr'}>
+                        <div className={'filter-section'}>
+                            <BUTTON variant="light" size={'sm'}><CloseIcon/> طبق متكامل</BUTTON>
+                            <BUTTON variant="light" size={'sm'}><CloseIcon/> سندوتشات </BUTTON>{' '}
+                        </div>
                     </div>
-                </div>
-                {[1, 2, 3, 4, 5, 6, 7, 8].map(idx => {
-                    return (
-                        <div className={"col-sm-3"} key={idx}>
-                            <Card className={'card'}>
-                                <Card.Body>
-                                    <Card.Title className={'btn btn-light kcal'}>
-                                        <RunIcon/> {" "}
-                                        200 Kcal
-                                    </Card.Title>
-                                    <ExclamationIcon/>
 
-                                    <div className={'card-img'}>
-                                        <img
-                                            src={'https://spinneys-egypt.com/index.php/cache/large/product/6435/EXkDm4hb0oEUH3ZDVuJU6hUZ74Kzx7CCrWSaaHbw.jpg'}
-                                            alt={'logo-still-loading'}
-                                            className={'img'}
-                                        />
-                                    </div>
-                                    <Card.Text>
-                                        <small>عصير تفاح 250 مل</small>
-                                        <small className={'d-block'}>
-                                            الكمية بالمخزون
-                                            {": "}
-                                            <span className={'text'}>
+                    {!loading ?
+                        allPosts && allPosts
+                            .filter((singlePost, idx) => idx < 28)
+                            .map((singlePost, idx) => {
+                                return (
+                                    <div className={"col-sm-3"} key={idx}>
+                                        <Card className={'card'}>
+                                            <Card.Body>
+                                                <Card.Title className={'btn btn-light kcal'}>
+                                                    <RunIcon/> {" "}
+                                                    200 Kcal
+                                                </Card.Title>
+                                                <ExclamationIcon/>
+                                                <div className={'card-img'}>
+                                                    <img
+                                                        src={singlePost.image}
+                                                        alt={singlePost.title}
+                                                        className={'img'}
+                                                        style={{width: '50px', height: '50px'}}
+                                                    />
+                                                </div>
+                                                <Card.Text>
+                                                    <small>عصير تفاح 250 مل</small>
+                                                    <small className={'d-block'}>
+                                                        الكمية بالمخزون
+                                                        {": "}
+                                                        <span className={'text'}>
                                                {5}
                                          </span>
-                                        </small>
-                                    </Card.Text>
-                                    <div className={'footer'}>
-                                        <PlusIcon/>
-                                        <span className={'kcal'} dir={"rtl"}> 7.5 ريال  </span>
+                                                    </small>
+                                                </Card.Text>
+                                                <div className={'footer'}>
+                                                    <PlusIcon/>
+                                                    <span className={'kcal'} dir={"rtl"}> 7.5 ريال  </span>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
                                     </div>
-                                </Card.Body>
-                            </Card>
-                        </div>
+                                )
+                            })
+                        :
+                        <div className={'container text-center'}>
+                            <Spinner animation="border" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </Spinner>
 
-                    )
-                })}
+                        </div>
+                    }
+
             </div>
-        </RapperHomePage>
+        </div>
     )
 }
 
-export default ShoppingComponent;
+
+const mapStateToProps = state => ({
+    allPosts: state.posts.posts,
+    loading: state.posts.loading,
+})
+
+
+const mapDispatchToProps = dispatch => ({
+    doGetPosts: () => dispatch(doGetPosts())
+})
+export default connect(mapStateToProps, mapDispatchToProps)(ShoppingComponent);

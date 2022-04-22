@@ -15,4 +15,7 @@ export const SearchIcon = styled(BsSearch)``;
 export const RapperShoppingComponent = styled.div`
   text-align: -webkit-center;
   margin-top: 20px;
+  .kcal{
+    text-align
+  }
 `;

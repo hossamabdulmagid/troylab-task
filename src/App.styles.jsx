@@ -17,7 +17,7 @@ export const RapperAppComponent = styled.div`
   @media only screen and (min-width: 1200px) {
     .App-header {
       background-color: rgb(233, 235, 239);
-      height: 90vh;
+      height: auto;
       display: flex;
       align-items: center;
       justify-content: center;

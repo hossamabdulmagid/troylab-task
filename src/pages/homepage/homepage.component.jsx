@@ -25,9 +25,9 @@ const HomePage = () => {
                         <BUTTON variant="success">الكل</BUTTON>
                     </div>
                 </div>
-                {[1, 2, 3, 4, 5, 6, 7, 8].map(idx => {
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(idx => {
                     return (
-                        <div className={"col-sm-3"} key={idx}>
+                        <div className={"col-sm-4"} key={idx}>
                             <Card className={'card'}>
                                 <Card.Body>
                                     <Card.Title className={'btn btn-light kcal'}>

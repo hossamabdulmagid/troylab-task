@@ -1,6 +1,6 @@
 const OrderComponent = () => {
     return (
-        <div>
+        <div className={'container text-center'} style={{marginBottom: '800px'}}>
             welcome From Orders
         </div>
     )
